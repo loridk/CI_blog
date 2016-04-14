@@ -41,6 +41,8 @@
 $route['default_controller'] = "page";
 $route['404_override'] = '';
 
+$route['new_post'] = 'page/new_post';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

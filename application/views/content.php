@@ -21,15 +21,18 @@
 
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">'
-                        . $post['title'] .
+                    <div class="panel-heading">
+                        <h4>'. $post['title'] .'</h4>'
+
+                    . date('F j, Y - g:i a', strtotime($post['created']) ) .
+
                         '<div class="btn-group pull-right">
                                 <a href="#"><button class="btn btn-primary btn-xs">Delete</button></a>
                         </div>
 
-                        <br />'
-                        . date('F j, Y - g:i a', strtotime($post['created']) ) .
-                    '</div>
+                        <br />
+
+                    </div>
 
                     <div class="panel-body">'
 

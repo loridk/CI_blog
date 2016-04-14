@@ -15,7 +15,17 @@ class Page extends CI_Controller {
         );
 
         $this->load->view('header');
-        $this->load->view('content', $data);
+        $this->load->view('main', $data);
+        $this->load->view('footer');
+    }
+
+    function new_post() {
+        $data = array(
+            'title' => 'New Post'
+        );
+
+        $this->load->view('header');
+        $this->load->view('form', $data);
         $this->load->view('footer');
     }
 
