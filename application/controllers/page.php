@@ -29,6 +29,17 @@ class Page extends CI_Controller {
         $this->load->view('footer');
     }
 
+    function show($id) {
+
+        $query = $this->post_model->get_by('id', $id);
+        if($query->num_rows()!==0)
+        {
+            var_dump($query);
+        }
+        else
+            return FALSE;
+    }
+
 
 
 }

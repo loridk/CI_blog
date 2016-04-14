@@ -42,6 +42,7 @@ $route['default_controller'] = "page";
 $route['404_override'] = '';
 
 $route['new_post'] = 'page/new_post';
+$route['show/(:num)'] = 'page/show/$1';
 
 
 /* End of file routes.php */
