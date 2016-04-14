@@ -14,8 +14,7 @@
             // Query DB
             $posts = $this->post_model->get_all();
 
-
-            foreach ($posts as $post) {
+            foreach (array_reverse($posts) as $post) {
 
                 echo
                     '<div class="row" style="margin-top: 5%">
