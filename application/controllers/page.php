@@ -9,18 +9,13 @@ class Page extends CI_Controller {
 
     function index()
     {
-        // Query DB
-        $posts = $this->post_model->as_array()->get_all();
 
-       var_dump($posts);
-        exit();
-
-        /*$data = array(
+        $data = array(
             'title' => 'Blog'
-        );*/
+        );
 
         $this->load->view('header');
-        $this->load->view('content', $posts);
+        $this->load->view('content', $data);
         $this->load->view('footer');
     }
 

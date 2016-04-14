@@ -1,9 +1,12 @@
 <?php
 class Post_model extends MY_Model {
 
+    protected $return_type = 'array';
+
     public function __construct() {
         parent::__construct();
     }
+
 
 
 }
