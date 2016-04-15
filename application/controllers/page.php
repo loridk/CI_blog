@@ -22,7 +22,7 @@ class Page extends CI_Controller {
     }
 
     // form for new post
-    function new_post() {
+    function new_post_form() {
 
         $data = array(
             'title' => 'New Post'
