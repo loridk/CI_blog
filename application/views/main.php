@@ -13,8 +13,8 @@
                     <div class="panel-heading">
                         <h4><a href="<?php echo site_url('show/'.$post['id']) ?>"> <?php echo $post['title'] ?></a></h4>
                         <?php echo date('F j, Y - g:i a', strtotime($post['created']) ) ?>
-                        <div class="btn-group pull-right">
-                            <a href="<?php echo site_url('delete_post') ?>" class="btn btn-primary btn-xs">Delete</a>
+                        <div class="pull-right">
+                            <a href="<?php echo site_url('delete_post/'.$post['id']) ?>" class="btn btn-primary btn-xs">Delete</a>
                         </div>
                         <br>
                     </div>

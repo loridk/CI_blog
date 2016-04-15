@@ -60,8 +60,9 @@ class Page extends CI_Controller {
         redirect('');
     }
 
-    function delete_post() {
-        echo'delete';
+    function delete_post($id) {
+        $this->post_model->delete($id);
+        redirect('');
     }
 
 
