@@ -33,6 +33,8 @@
                             <ul class="dropdown-menu" aria-labelledby="download">
                                 <li><a href="<?php echo site_url('new_post_form'); ?>">New Post</a></li>
                                 <li class="divider"></li>
+                                <li><a href="<?php echo site_url('register'); ?>">Register User</a></li>
+                                <li class="divider"></li>
                                 <li><a href="<?php echo site_url('logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
@@ -45,13 +47,6 @@
                     <div class="nav navbar-nav navbar-right" style="margin-top: 20%">
 
                             <a href="<?php echo site_url('login'); ?>" class="btn btn-primary">Login</a>
-                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">New User <span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="download">
-                                <li><a href="<?php /*echo site_url('login'); */?>">Login</a></li>
-                                <li class="divider"></li>
-                                <li><a href="<?php /*echo site_url('register'); */?>">Register</a></li>
-                            </ul>-->
-
                     </div>
 
                     <?php }?>
