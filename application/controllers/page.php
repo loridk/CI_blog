@@ -11,7 +11,8 @@ class Page extends CI_Controller {
     {
 
         $data = array(
-            'title' => 'Blog'
+            'title' => 'Blog',
+            'posts' => $this->post_model->get_all()
         );
 
         $this->load->view('header');
@@ -20,6 +21,7 @@ class Page extends CI_Controller {
     }
 
     function new_post() {
+
         $data = array(
             'title' => 'New Post'
         );
@@ -31,13 +33,13 @@ class Page extends CI_Controller {
 
     function show($id) {
 
-        $query = $this->post_model->get_by('id', $id);
+        $query = $this->post_model->get($id);
         if($query->num_rows()!==0)
         {
             var_dump($query);
         }
         else
-            return FALSE;
+            echo 'Error';
     }
 
 

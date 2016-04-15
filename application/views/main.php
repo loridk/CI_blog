@@ -12,7 +12,7 @@
     <?php
 
     // Query DB
-    $posts = $this->post_model->get_all();
+
 
     foreach (array_reverse($posts) as $post) {
 
