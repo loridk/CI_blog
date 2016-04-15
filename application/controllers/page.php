@@ -21,6 +21,19 @@ class Page extends CI_Controller {
         $this->load->view('footer');
     }
 
+    // show one post
+    function show($id) {
+
+        $data = array(
+            'post' => $this->post_model->get($id)
+        );
+
+        $this->load->view('header');
+        $this->load->view('single', $data);
+        $this->load->view('footer');
+
+    }
+
     // form for new post
     function new_post_form() {
 
@@ -33,19 +46,8 @@ class Page extends CI_Controller {
         $this->load->view('footer');
     }
 
-    // show one post
-    public function show($id) {
 
-        $data = array(
-            'post' => $this->post_model->get($id)
-        );
-
-        $this->load->view('header');
-        $this->load->view('single', $data);
-        $this->load->view('footer');
-
-    }
-
+    // insert new post
     function create_post() {
         $form_data = $this->input->post();
         $title = $form_data['title'];
@@ -60,22 +62,43 @@ class Page extends CI_Controller {
         redirect('');
     }
 
+    // delete post
     function delete_post($id) {
         $this->post_model->delete($id);
         redirect('');
     }
 
+    //form for edit post
+    function edit_post_form($id) {
+        $post = $this->post_model->get_by('id', $id);
+        $oldTitle = $post['title'];
+        $oldBody = $post['body'];
 
+        $data = array(
+            'title' => 'Edit Post',
+            'id' => $id,
+            'oldTitle' => $oldTitle,
+            'oldBody' => $oldBody
+        );
 
-
-    // test
-    public function test() {
-        echo "hi";
-        exit;
+        $this->load->view('header');
+        $this->load->view('edit_form', $data);
+        $this->load->view('footer');
     }
 
+    // edit
+    function edit_post() {
 
+        $form_data = $this->input->post();
+        $title = $form_data['title'];
+        $body = $form_data['body'];
+        $id = $form_data['id'];
 
+        $this->post_model->update($id, array( 'title' => $title, 'body' => $body ));
+
+        redirect('');
+
+    }
 }
 
 ?>
