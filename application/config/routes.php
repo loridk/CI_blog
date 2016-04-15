@@ -49,8 +49,8 @@ $route['delete_post/(:any)'] = 'page/delete_post/$1';
 $route['edit_post_form/(:any)'] = 'page/edit_post_form/$1';
 
 $route['login'] = 'auth/login';
-$route['logout'] = 'user/test2';
-$route['register_form'] = 'user/register_form';
+$route['logout'] = 'auth/logout';
+$route['register'] = 'auth/create_user';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

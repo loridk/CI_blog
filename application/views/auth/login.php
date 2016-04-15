@@ -1,12 +1,14 @@
 <div class="row" style="margin-top: 5%">
 
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 text-center" style="margin-top: 2%">
+    <div id="infoMessage"><h3 class="text-danger"><?php echo $message;?></h3></div>
     <h2><?php echo lang('login_heading');?></h2>
     <p><?php echo lang('login_subheading');?></p>
+
   </div>
 
 
-<div id="infoMessage"><?php echo $message;?></div>
+
 
   <div class="col-md-6 col-md-offset-3">
 
@@ -53,6 +55,7 @@
 </div>
 
 <div class="row" style="margin-top: 1%">
+  <hr>
   <div class="col-md-6 col-md-offset-3">
     <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
     <a href="<?php echo site_url('') ?>" class="btn btn-primary">Back</a>

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>CI Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css">
-
 </head>
 <body>
 
@@ -23,11 +22,14 @@
                 </div>
                 <div class="navbar-collapse collapse navbar-right" id="navbar-main">
 
-                    <!-- If user -->
+                    <?php if ($this->ion_auth->logged_in()) {
+
+                        $user = $this->ion_auth->user()->row_array();
+                        $username = $user['username'];?>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Username <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><?php echo 'Hello, ' . $username ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="download">
                                 <li><a href="<?php echo site_url('new_post_form'); ?>">New Post</a></li>
                                 <li class="divider"></li>
@@ -36,19 +38,23 @@
                         </li>
                     </ul>
 
+                    <?php }?>
 
-                    <!-- Else -->
+                    <?php if (!$this->ion_auth->logged_in()) {?>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">New User <span class="caret"></span></a>
+                    <div class="nav navbar-nav navbar-right" style="margin-top: 20%">
+
+                            <a href="<?php echo site_url('login'); ?>" class="btn btn-primary">Login</a>
+                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">New User <span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="download">
-                                <li><a href="<?php echo site_url('login'); ?>">Login</a></li>
+                                <li><a href="<?php /*echo site_url('login'); */?>">Login</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo site_url('register_form'); ?>">Register</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                                <li><a href="<?php /*echo site_url('register'); */?>">Register</a></li>
+                            </ul>-->
+
+                    </div>
+
+                    <?php }?>
 
                 </div>
             </div>
