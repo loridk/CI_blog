@@ -46,6 +46,24 @@ class Page extends CI_Controller {
 
     }
 
+    function create_post() {
+        $form_data = $this->input->post();
+        $title = $form_data['title'];
+        $body = $form_data['body'];
+
+        $this->post_model->insert(array(
+            'title' => $title,
+            'body' => $body,
+            'user_id' => "Lori Dunford"
+        ));
+
+        redirect('');
+    }
+
+    function delete_post() {
+        echo'delete';
+    }
+
 
 
 

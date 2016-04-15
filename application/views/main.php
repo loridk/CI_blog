@@ -3,9 +3,6 @@
 <div class="row" style="margin-top: 5%">
     <div class="col-md-12 text-center">
         <h2><?php echo $title?></h2>
-
-        <p>// Test area </p>
-
     </div>
 
 
@@ -17,7 +14,7 @@
                         <h4><a href="<?php echo site_url('show/'.$post['id']) ?>"> <?php echo $post['title'] ?></a></h4>
                         <?php echo date('F j, Y - g:i a', strtotime($post['created']) ) ?>
                         <div class="btn-group pull-right">
-                            <a href="#" class="btn btn-primary btn-xs">Delete</a>
+                            <a href="<?php echo site_url('delete_post') ?>" class="btn btn-primary btn-xs">Delete</a>
                         </div>
                         <br>
                     </div>

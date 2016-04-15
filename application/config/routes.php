@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 $route['new_post_form'] = 'page/new_post_form';
 $route['show/(:any)'] = 'page/show/$1';
+$route['delete_post'] = 'page/delete_post';
 
 
 /* End of file routes.php */
