@@ -7,6 +7,7 @@ class Page extends CI_Controller {
         parent::__construct();
     }
 
+    // show all post
     function index()
     {
 
@@ -20,6 +21,7 @@ class Page extends CI_Controller {
         $this->load->view('footer');
     }
 
+    // form for new post
     function new_post() {
 
         $data = array(
@@ -31,15 +33,26 @@ class Page extends CI_Controller {
         $this->load->view('footer');
     }
 
-    function show($id) {
+    // show one post
+    public function show($id) {
 
-        $query = $this->post_model->get($id);
-        if($query->num_rows()!==0)
-        {
-            var_dump($query);
-        }
-        else
-            echo 'Error';
+        $data = array(
+            'post' => $this->post_model->get($id)
+        );
+
+        $this->load->view('header');
+        $this->load->view('single', $data);
+        $this->load->view('footer');
+
+    }
+
+
+
+
+    // test
+    public function test() {
+        echo "hi";
+        exit;
     }
 
 

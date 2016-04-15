@@ -24,7 +24,7 @@
                 <div class="navbar-collapse collapse navbar-right" id="navbar-main">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="<?php echo site_url('page/new_post'); ?>">New Post</a>
+                            <a href="<?php echo site_url('page/new_post_form'); ?>">New Post</a>
                         </li>
                     </ul>
 
