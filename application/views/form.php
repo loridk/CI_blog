@@ -11,7 +11,7 @@
         ?>
 
             <div class="form-group">
-                <label for="text">Title:</label>
+                <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" name="title" required>
             </div>
             <div class="form-group">

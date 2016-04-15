@@ -22,21 +22,33 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse navbar-right" id="navbar-main">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="<?php echo site_url('page/new_post_form'); ?>">New Post</a>
+
+                    <!-- If user -->
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Username <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="download">
+                                <li><a href="<?php echo site_url('new_post_form'); ?>">New Post</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<?php echo site_url('logout'); ?>">Logout</a></li>
+                            </ul>
                         </li>
                     </ul>
 
-                    <!--<ul class="nav navbar-nav navbar-right">
+
+                    <!-- Else -->
+
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Log in <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">New User <span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="download">
-                                <li><a href="#">New Post</a></li>
+                                <li><a href="<?php echo site_url('login'); ?>">Login</a></li>
                                 <li class="divider"></li>
+                                <li><a href="<?php echo site_url('register_form'); ?>">Register</a></li>
                             </ul>
                         </li>
-                    </ul>-->
+                    </ul>
 
                 </div>
             </div>

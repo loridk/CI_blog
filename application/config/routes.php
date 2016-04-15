@@ -39,13 +39,18 @@
 */
 
 $route['default_controller'] = "page";
-$route['404_override'] = '';
+$route['404_override'] = 'page/error';
+
+$route['error'] = 'page/error';
 
 $route['new_post_form'] = 'page/new_post_form';
 $route['show/(:any)'] = 'page/show/$1';
 $route['delete_post/(:any)'] = 'page/delete_post/$1';
 $route['edit_post_form/(:any)'] = 'page/edit_post_form/$1';
 
+$route['login'] = 'auth/login';
+$route['logout'] = 'user/test2';
+$route['register_form'] = 'user/register_form';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

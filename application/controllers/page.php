@@ -99,6 +99,20 @@ class Page extends CI_Controller {
         redirect('');
 
     }
+
+    // show all post
+    function error()
+    {
+        $data = array(
+            'title' => 'You seem to have taken a wrong turn'
+        );
+
+        $this->load->view('header');
+        $this->load->view('error', $data);
+        $this->load->view('footer');
+    }
+
+
 }
 
 ?>
