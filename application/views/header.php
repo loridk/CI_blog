@@ -29,7 +29,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><?php echo 'Hello, ' . $username ?> <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Admin <span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="download">
                                 <li><a href="<?php echo site_url('new_post_form'); ?>">New Post</a></li>
                                 <li class="divider"></li>

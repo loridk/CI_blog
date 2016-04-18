@@ -531,7 +531,7 @@ class Auth extends CI_Controller {
 			$this->load->view('header');
 			$this->load->view('auth/create_user', $this->data);
 			$this->load->view('footer');
-			
+
         }
     }
 
