@@ -52,11 +52,12 @@ class Page extends CI_Controller {
         $form_data = $this->input->post();
         $title = $form_data['title'];
         $body = $form_data['body'];
+        $user_id = $form_data['user_id'];
 
         $this->post_model->insert(array(
             'title' => $title,
             'body' => $body,
-            'user_id' => "Lori Dunford"
+            'user_id' => $user_id
         ));
 
         redirect('');

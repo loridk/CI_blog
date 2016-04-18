@@ -25,16 +25,20 @@
                     <?php if ($this->ion_auth->logged_in()) {
 
                         $user = $this->ion_auth->user()->row_array();
-                        $username = $user['username'];?>
+                        $username = $user['first_name'];?>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Admin <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><?php echo 'Hello, ' . $username ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu" aria-labelledby="download">
                                 <li><a href="<?php echo site_url('new_post_form'); ?>">New Post</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo site_url('register'); ?>">Register User</a></li>
-                                <li class="divider"></li>
+
+                                <?php if ($this->ion_auth->is_admin()) {?>
+                                    <li><a href="<?php echo site_url('register'); ?>">Register User</a></li>
+                                    <li class="divider"></li>
+                                <?php }?>
+
                                 <li><a href="<?php echo site_url('logout'); ?>">Logout</a></li>
                             </ul>
                         </li>

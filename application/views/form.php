@@ -8,7 +8,11 @@
         <?php
             $attributes = array('role' => 'form', 'id' => 'postForm');
             echo form_open('page/create_post', $attributes);
+            $user = $this->ion_auth->user()->row_array();
+            $username = $user['first_name'] . ' ' . $user['last_name'];
         ?>
+
+            <input type="hidden" name="user_id" value="<?php echo $username ?>" />
 
             <div class="form-group">
                 <label for="title">Title:</label>
