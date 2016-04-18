@@ -36,14 +36,18 @@ class Page extends CI_Controller {
 
     // form for new post
     function new_post_form() {
+        if ($this->ion_auth->logged_in()) {
+            $data = array(
+                'title' => 'New Post'
+            );
 
-        $data = array(
-            'title' => 'New Post'
-        );
-
-        $this->load->view('header');
-        $this->load->view('form', $data);
-        $this->load->view('footer');
+            $this->load->view('header');
+            $this->load->view('form', $data);
+            $this->load->view('footer');
+        }
+        else {
+            redirect('login');
+        }
     }
 
 
@@ -65,26 +69,36 @@ class Page extends CI_Controller {
 
     // delete post
     function delete_post($id) {
-        $this->post_model->delete($id);
-        redirect('');
+        if ($this->ion_auth->logged_in()) {
+            $this->post_model->delete($id);
+            redirect('');
+        }
+        else {
+            redirect('login');
+        }
     }
 
     //form for edit post
     function edit_post_form($id) {
-        $post = $this->post_model->get_by('id', $id);
-        $oldTitle = $post['title'];
-        $oldBody = $post['body'];
+        if ($this->ion_auth->logged_in()) {
+            $post = $this->post_model->get_by('id', $id);
+            $oldTitle = $post['title'];
+            $oldBody = $post['body'];
 
-        $data = array(
-            'title' => 'Edit Post',
-            'id' => $id,
-            'oldTitle' => $oldTitle,
-            'oldBody' => $oldBody
-        );
+            $data = array(
+                'title' => 'Edit Post',
+                'id' => $id,
+                'oldTitle' => $oldTitle,
+                'oldBody' => $oldBody
+            );
 
-        $this->load->view('header');
-        $this->load->view('edit_form', $data);
-        $this->load->view('footer');
+            $this->load->view('header');
+            $this->load->view('edit_form', $data);
+            $this->load->view('footer');
+        }
+        else {
+            redirect('login');
+        }
     }
 
     // edit
