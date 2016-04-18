@@ -35,6 +35,8 @@
                                 <li class="divider"></li>
 
                                 <?php if ($this->ion_auth->is_admin()) {?>
+                                    <li><a href="<?php echo site_url('users'); ?>">See all Users</a></li>
+                                    <li class="divider"></li>
                                     <li><a href="<?php echo site_url('register'); ?>">Register User</a></li>
                                     <li class="divider"></li>
                                 <?php }?>

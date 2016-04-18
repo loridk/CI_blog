@@ -51,6 +51,7 @@ $route['edit_post_form/(:any)'] = 'page/edit_post_form/$1';
 $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
 $route['register'] = 'auth/create_user';
+$route['users'] = 'auth/index';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
