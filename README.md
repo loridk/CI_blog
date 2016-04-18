@@ -1,1 +1,1 @@
-Blog built with Codeigniter 2, [Ion Auth](http://benedmunds.com/ion_auth), [Base Model](https://github.com/jamierumbelow/codeigniter-base-model) and Bootstrap
+Blog built with Codeigniter 2, [Ion Auth](http://benedmunds.com/ion_auth), [Base Model](https://github.com/jamierumbelow/codeigniter-base-model) and Bootstrap on MAMP

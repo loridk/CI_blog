@@ -53,6 +53,7 @@ crashlytics-build.properties
 !*/cache/index.html
 !*/cache/.htaccess
 
+/application/config/database.php
 notes.txt
 
 # Created by .ignore support plugin (hsz.mobi)
